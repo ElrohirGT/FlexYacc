@@ -16,7 +16,7 @@
       pkgs.mkShell {
         packages = [pkgs.bison pkgs.flex pkgs.gcc];
         shellHook = ''
-          alias run="flex simple_language.l && yacc simple_language.y && g++ lex.yy.c y.tab.c -o parser"
+          alias run="flex simple_language.l && yacc -d simple_language.y && g++ lex.yy.c y.tab.c -o parser"
         '';
       };
   };
